@@ -6,8 +6,9 @@ const File = require('../models/File');
 exports.localFileUpload = async (req, res) => {
     try{
         const file = req.files.file;
-        
-        const path = __dirname + "/files/"+Date.now();
+
+        const path = __dirname + "/files/"+Date.now() + `.${file.name.split('.')[1]}`;
+
         file.mv(path,(err)=>{
             console.log(err);
         });
