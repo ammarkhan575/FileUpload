@@ -3,7 +3,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 
 // import functions
-const connect = require('./config/db');
+const connect = require('./config/database');
 const cloudinaryConnect = require('./config/cloudinary');
 
 dotenv.config();
@@ -22,7 +22,7 @@ const fileupload = require('express-fileupload');
 app.use(fileupload());
 
 // routes
-const Upload = require('./routes/FileUplaod');
+const Upload = require('./routes/FileUpload');
 app.use('/api/v1/upload',Upload);
 
 // activating app

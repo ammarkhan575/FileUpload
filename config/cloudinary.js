@@ -1,7 +1,7 @@
 const cloudinary = require('cloudinary').v2;
 
 
-exports.cloudinaryConnect = () =>{
+const cloudinaryConnect = () =>{
     try{
         cloudinary.config({
             cloud_name: process.env.CLOUD_NAME,
@@ -13,3 +13,5 @@ exports.cloudinaryConnect = () =>{
         console.log(error);
     }
 };
+
+module.exports = cloudinaryConnect;
